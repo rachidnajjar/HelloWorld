@@ -1,2 +1,2 @@
 # HelloWorld
-Hello worl project for dotnet core
+Hello world project for dotnet core
