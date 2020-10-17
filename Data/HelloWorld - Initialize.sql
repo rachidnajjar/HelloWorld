@@ -1,0 +1,22 @@
+-- Script de céation des tables
+CREATE TABLE Employe (
+	Id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Nom	TEXT NOT NULL,
+	Prenom	TEXT NOT NULL
+);
+
+CREATE TABLE TypeTelephone (
+	Id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Libelle	TEXT NOT NULL
+);
+
+DROP TABLE Telephone;
+CREATE TABLE Telephone (
+	Id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	EmployeId INTEGER NOT NULL,
+    TypeTelephoneId	INTEGER NOT NULL,
+	Numero	TEXT NOT NULL,
+    FOREIGN KEY (EmployeId) REFERENCES Employe (Id),
+    FOREIGN KEY (TypeTelephoneId) REFERENCES TypeTelephone (Id)
+);
+
